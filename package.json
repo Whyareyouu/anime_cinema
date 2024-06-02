@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky",
-    "test:unit": "jest"
+    "test:unit": "jest --passWithNoTests"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
