@@ -1,13 +1,8 @@
-import type { Config } from "tailwindcss"
-
+const { fontFamily } = require("tailwindcss/defaultTheme");
+/** @type {import('tailwindcss').Config} */
 const config = {
   darkMode: ["class"],
-  content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
   theme: {
     container: {
@@ -39,6 +34,9 @@ const config = {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
+        },
+        fontFamily: {
+          sans: ["var(--font-sans)", ...fontFamily.sans],
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
@@ -75,6 +73,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+};
 
-export default config
+export default config;
