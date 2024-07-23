@@ -1,7 +1,7 @@
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
-import { cn } from "../lib/utils";
-import { ReactQueryProvider } from "../utils";
+import { cn } from "@/lib/utils";
+import { ReactQueryProvider, ThemeProvider } from "@/utils";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -16,7 +16,9 @@ const RootLayout = ({
     <html lang="en" suppressHydrationWarning>
       <head />
       <body className={cn("min-h-screen bg-background font-sans antialiased", fontSans.variable)}>
-        <ReactQueryProvider>{children}</ReactQueryProvider>
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          <ReactQueryProvider>{children}</ReactQueryProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -11,8 +11,8 @@ const mockServerConfig: MockServerConfig = {
   database: {
     data: DATABASE,
     routes: {
-      "/api/anime": "/anime",
-      "/api/anime/:id": "/anime/:id",
+      "/api/anime": "/animes",
+      "/api/anime/:id": "/animes/:id",
     },
   },
 };
